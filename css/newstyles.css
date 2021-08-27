@@ -1,0 +1,38 @@
+/* GLOBAL STYLES */
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+   font-size: 6vw;
+   color: #fff;
+}
+
+p {
+  font-size: 6vw;
+  color: blue;
+}
+
+/* HERO STYLES */
+
+  .hero {
+  width: 100vw;
+  height: 100vh;
+
+/* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Text styles*/
+  text-align: center;
+
+  /* Background styles */
+  background-image: url(/home/vela/repos/LYHOF/images/pic1.png);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
