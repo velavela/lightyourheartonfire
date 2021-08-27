@@ -6,14 +6,10 @@ html, body {
 }
 
 h1 {
-   font-size: 6vw;
+   font-size: 4vw;
    color: #fff;
 }
 
-p {
-  font-size: 6vw;
-  color: blue;
-}
 
 /* HERO STYLES */
 
