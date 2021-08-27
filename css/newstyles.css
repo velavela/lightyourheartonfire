@@ -3,11 +3,24 @@
 html, body {
   margin: 0;
   padding: 0;
+
+  /* font-family: 'Hina Mincho', serif;
+
+  font-family: 'Montserrat', sans-serif;
+*/
+
 }
 
 h1 {
-   font-size: 4vw;
    color: #fff;
+   font-family: 'Montserrat', sans-serif;
+
+}
+
+p {
+  font-family: 'Hina Mincho', serif;
+  /* font-size: 2vw;
+  color: pink; */
 }
 
 
@@ -31,4 +44,9 @@ h1 {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+}
+
+.main-title {
+  font-size:4.5vw;
+
 }
