@@ -60,3 +60,40 @@ p {
     font-family: 'Montserrat', sans-serif;
     font-size: 2vw;
   }
+
+  #signup-line {
+    display: flex;
+    align-items: center;
+  }
+
+.clear {
+  }
+
+.email {
+  width: 250px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 1rem;
+  padding-left: 0.5rem;
+
+}
+
+.email::placeholder {
+  color: #b1b1b1;
+}
+
+  .button {
+    width: 100px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #38A3A5;
+    color: #fff;
+    font-size: 1rem;
+
+  }
+
+  .button:hover {
+    cursor: pointer;
+    background-color: #F2A154;
+    transition: all 0.4s ease-out;
+  }
