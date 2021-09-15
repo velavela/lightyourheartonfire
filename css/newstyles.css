@@ -48,3 +48,15 @@ p {
 .main-title {
   font-size: 4.5vw;
 }
+
+/* NEWSLETTER SIGN UP */
+
+#mc_embed_signup {
+  clear:left;
+  width:100%;}
+
+  .newsletter-signup {
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2vw;
+  }
