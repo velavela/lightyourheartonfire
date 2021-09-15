@@ -64,10 +64,9 @@ p {
   #signup-line {
     display: flex;
     align-items: center;
+    margin-top: 20px;
   }
 
-.clear {
-  }
 
 .email {
   width: 250px;
@@ -89,6 +88,8 @@ p {
     background-color: #38A3A5;
     color: #fff;
     font-size: 1rem;
+    margin-left: 2px;
+    margin-bottom: 10px;
 
   }
 
