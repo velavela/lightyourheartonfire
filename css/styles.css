@@ -1,164 +1,721 @@
+/* GLOBAL STYLES */
 
-
-body {
+:root {
+  /* --background: rgba(44, 181, 190, .83); */
+  /* --background: rgba(211, 195, 204, .8); */
+  --background: rgba(222, 252, 254, .5);
 }
 
-h1, h2, h3 {
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  font-size: 16px;
+  color: #FFF;
+
 
 }
 
-/* global styles and social styles */
-
-.main-title {
-   position: absolute;
-   top: 350px;
-   left: 500px;
-   color: white;
-   font-size: 80px;
-
-}
-
-.main-image {
-  width: 100%;
+img {
+  max-width: 100%;
   height: auto;
 }
 
-.homepage-offerings {
-  font-size: 35px;
-  color: #a4ebf3;
-  margin-top: 3%;
-  margin-bottom: 3%;
-}
-
- .homepage-paragraph {
-  color: grey;
-  padding-left: 25%;
-  padding-right: 25%;
-}
-
-
-.container-fluid {
-  padding: 0;
-}
-
-
-
-.image {
-   position: relative;
-   width: 100%;
-   padding-left: 0;
-   padding-right: 0;
-}
-
-.quote-section {
-  padding-top: 10%;
-  padding-bottom: 10%;
-}
-
-
-.quotation {
-  text-align: center;
-  color: black;
-  font-size: 30px;
-  padding-top: 4%;
-  padding-bottom: 3%;
-}
-
-.homepage-about {
-  border: solid 5px #FA6C79;
+.container {
   width: 95%;
-  margin-left: 3%;
-  margin-right: 3%;
-}
-
-.hr {
-  border-bottom: 5px solid #a4ebf3;
-  width: 10%;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
-.fred {
-  color: grey;
-  font-size: 30px;
+/* TYPOGRAPHY */
+
+/*     font-family: 'Dancing Script', cursive;
+
+    font-family: 'Nothing You Could Do', cursive;
+
+    font-family: 'Raleway', sans-serif;
+
+    #FF82C3; pink
+    #38A3A5; blue
+    #F2A154; orange
+    */
+
+
+
+h1 {
+  font-weight: 300;
+  font-size: 2.5rem;
+  margin-top: 0;
 }
 
-.homepage-vash {
-  padding: 5% 3%;
-
+.title {
+  font-size: 4rem;
+  color: #FFF;
+  margin-top: 1em;
 }
 
-.intro-text {
-  padding-right: 3%;
+.title-line-1 {
+  font-weight: 300;
+
 }
-
-.minibio {
-  font-size: 25px;
-  padding-right: 8%;
-  color: grey;
-}
-
-.welcome {
-  color: #FA6C79;
-  padding: 40% 0 15% 0;}
-
-.more-about {
-  color: #FA6C79;
-}
-
-.bloglink {
-  color: #FA6C79;
-}
-
-
-
-
-/* Offerings Section */
-
-#offerings {
-  padding: 7% 7%;
-}
-
-
-
-.offering-section {
-  text-align: center;
-  margin-top: 5%;
-}
-
-
-
-.socials {
-text-align: center;
-padding: 5% 0 5% 0;
+.title-line-2 {
+  display:block;
+  font-weight: 300;
 
 }
 
-.contact-block {
-  border: solid 5px #FA6C79;
-  margin-top: 5%;
-  margin-left: 5%;
-  margin-right: 5%;
-  padding: 5% 5% 5% 5%;
+.title-line-3 {
+  display: block;
+  font-weight: 400;
+}
+
+.cta-line-2 {
+  display: block;
+}
+
+.cta-line-3 {
+  display: block;
+}
+
+/* LAYOUT */
+
+/*header
+===================*/
+
+header {
+  background: var(--background);
+  text-align: left;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+/* determines nav height */
+.logo {
+  margin: .15em;
+}
+
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: right;
+  top: 100%;
+  right: 0;
+  background: var(--background);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 1em;
+  margin-bottom: .85em;
+}
+
+nav a {
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: .75rem;
+  padding: .5em;
+  color: #FFF;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover,
+nav a:focus {
+  color: #DDD;
+}
+
+.nav-toggle:checked ~ nav {
+  transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+/* home-hero
+===================*/
+
+.home-hero {
+  background-image: url(../images/index-hero-image.png);
+  background-size: cover;
+  background-position: center;
+  padding: 10em 0;
+  /* padding: 30em 1em 0 0; */
+  width: 100vw;
+  margin-left: -2.5%;
+}
+
+/* home-about
+===================*/
+
+.home-about {
+  background-color: #232323;
+
+}
+
+.home-about-textbox {
+background-color: #232323;
+padding: 4em;
+width: 100vw;
+margin-left: -2.5%;
+outline: 2px solid #3EDBF0;
+outline-offset: -3em;
+position: relative;
+
+
+}
+
+.home-about-textbox h1 {
+  font-family: 'Dancing Script', cursive;
+  background-color: #232323;
+  font-size: 3em;
+  font-weight: 400;
+  color: #3EDBF0;
+  position: absolute;
+  top: .2em;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 .2em;
+
+}
+
+.home-about-textbox p {
+  line-height: 1.75em;
+
+}
+
+.index-text {
+  max-width: 800px;
+}
+
+/* cta-hero section
+===================*/
+
+.cta-hero {
+  background-image: url(../images/cta-hero-image.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 3em 0 5em;
+  width: 100vw;
+  margin-left: -2.5%;
+}
+
+.cta-hero h1 {
+  font-weight: 500;
+  text-align: left;
+  /* border: 2px solid pink; */
+  margin-left: 1em;
+  padding-bottom: 6em;
+
 }
 
 
-.offerings-page {
-  background-color: #ffe3fe;
+/* mailchimp section
+===================*/
+
+.mailchimp {
+background-color: #38A3A5;
+padding: 6em;
+width: 100vw;
+margin-left: -2.5%;
+
 }
 
-.future-image {
-  height: 100px;
-  width: 100px;
+/* NEWSLETTER SIGN UP */
 
-}
-
-.offerings-bg {
-  background-color: #fff;
-  margin: 3%;
-  width: 95%; /* used this line to get the right-margin visible, i do not think it's the solution*/
+#mc_embed_signup_scroll {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10vw;
 }
 
 
-.off-row {
-  padding: 5%;
+
+/* about page hero
+===================*/
+
+.about-hero {
+  background-image: url(../images/about-portrait.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 18em 0;
+  width: 100vw;
+  margin-left: -2.5%;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: #FFF;
+  margin-top: 1em;
+}
+
+.about-page-content {
+  background-color: #232323;
+  width: 100vw;
+  margin-left: -2.5%;
+  padding: 2em;
+}
+
+
+.about-page-content p {
+  line-height: 1.5em;
+}
+
+.consult-cta {
+  background-color: #F2A154;
+  width: 100vw;
+  margin-left: -2.5%;
+  padding: 2em;
+}
+
+
+/* coaching page
+===================*/
+
+.coaching-hero {
+  background-image: url(../images/coaching-hero-image.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 6em 0 1.5em;
+  width: 100vw;
+  margin-left: -2.5%;
+}
+
+.coaching-intro {
+  padding-top: 25em;
+}
+
+/*
+.coaching-title {
+  display: block;
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  font-size: 3rem;
+  padding-bottom: 8em;
+} */
+
+.coaching {
+  background-color: #232323;
+  width: 100vw;
+  margin-left: -2.5%;
+  padding: 2em 3em;
+}
+
+.coaching h2 {
+font-family: 'Raleway', sans-serif;
+font-weight: 100;
+text-align: left;
+
+}
+
+.coaching p {
+  line-height: 1.5em;
+  text-align: left;
+
+}
+
+.workshops {
+  background-color: #38A3A5;
+  width: 100vw;
+  margin-left: -2.5%;
+  padding: 2em 3em;
+}
+
+.coaching-cta-hero {
+  background-image: url(../images/coaching-cta-image.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 12em 0 3em;
+  width: 100vw;
+  margin-left: -2.5%;
+}
+
+
+
+
+/* #FF82C3; pink
+#38A3A5; blue
+#F2A154; orange */
+
+
+.workshops h2 {
+font-family: 'Raleway', sans-serif;
+font-weight: 100;
+text-align: left;
+
+}
+
+.workshops p {
+  line-height: 1.5em;
+  text-align: left;
+
+}
+
+/*footer
+===================*/
+
+
+footer {
+  background-color: #232323;
+  color: #FFF;
+  display: flex;
+  justify-content: space-around;
+  /* flex-direction: column; */
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+}
+
+.unstyled-list {
+  margin: .5em;
+  padding: .5em;
+  list-style-type: none;
+  text-align: left;
+}
+
+li {
+  padding-top: .5em;
+}
+
+.list-title {
+  padding: .5em 0;
+}
+
+/* COMPONENTS */
+
+/* buttons, etc. */
+
+.button {
+  display: inline-block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-width: 2px;
+  border-style: solid;
+  padding: .5em 1.75em;
+}
+
+.button-accent {
+  color: #FF82C3;
+  border-color: #FF82C3;
+
+}
+
+.button-accent:hover,
+.button-accent:focus {
+  background: #FF82C3;
+  color: #232323;
+}
+
+.button-accent-mc {
+  background-color: #F2A154;
+  border-color: #F2A154;
+  color: #FFF;
+}
+
+.button-accent-mc:hover {
+    cursor: pointer;
+    background-color: #232323;
+    border-color: #232323;
+    color: #FF82C3;
+    transition: all 0.4s ease-out;
+  }
+
+  .about-button {
+    background-color: #F2A154;
+    border-color: #38A3A5;
+    color: #fff;
+  }
+
+  .about-button:hover {
+      cursor: pointer;
+      background-color: #38A3A5;
+      border-color: #38A3A5;
+      color: #fff;
+      transition: all 0.4s ease-out;
+    }
+
+.button-coaching {
+  color: #FF82C3;
+  border-color: #FF82C3;
+  margin-bottom: 1em;
+  font-weight: 300;
+}
+
+.button-accent-coach-cta {
+  color: black;
+
+}
+
+.button-accent-coach-cta:hover {
+  opacity: 0.45
+}
+
+
+
+/* MEDIA QUERIES */
+
+/*index page*/
+
+@media (width <900px) {
+
+  .cta-index-desktop {
+    display: none;
+  }
+
+}
+@media (width >= 700px) {
+
+  /* .menu {
+    display: flex;
+    justify-content: flex-end;
+ } */
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax (700px, 1fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 1 / 2;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 2 / 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 1.5em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: #DDD;
+    position: absolute;
+    top: -.50em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    /* transform-origin: right; */
+    transition: transform ease-in-out 250ms;
+
+  }
+
+  nav a:hover::before {
+    transform: scale(1,1);
+  }
+
+  .title-line-1 {
+    display: inline;
+  }
+
+  .title-line-2 {
+    display: inline;
+  }
+
+
+  .cta-hero h1 {
+    font-weight: 500;
+    font-size: 4rem;
+    margin-left: 1.25em;
+  }
+
+.index-button {
+  margin-right: 13em;
+}
+
+.jtn {
+  font-size: 3rem;
+}
+
+.home-about-textbox {
+  padding: 9em;
+  outline-offset: -6em;
+}
+
+.home-about-textbox h1 {
+
+  top: 1.18em; */
+  padding: 0 .2em;
+
+}
+
+.home-about-textbox p {
+  line-height: 1.75em;
+
+}
+/* about page */
+
+.about-page-content {
+  padding: 5em 7em;
+}
+
+
+.consult-cta {
+
+  padding: 5em;
+}
+
+
+/* coaching page */
+
+.coaching-intro {
+  padding-bottom: 2em;
+}
+.button-coach-div {
+  display: inline-block;
+  padding: 0 3.5em;
+}
+
+.coaching {
+  padding: 6em 10em;
+}
+
+.workshops {
+  padding: 6em 10em;
+}
+
+.coaching-cta-hero {
+padding: 15em 0 3em;
+}
+}
+
+@media (width >= 900px) {
+
+/* index page */
+
+  .home-about {
+    background-image: url(../images/cta-hero-image.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 11em;
+    margin: 6em 3em 6em 7em;
+  }
+
+  .home-about-textbox {
+    width: 60%;
+    /* margin-left: -2.5%; */
+    margin-left: -4em;
+    top: -4em;
+    text-align: left;
+    box-shadow: 0 0 4em 0 rgba(0,0,0,.25);
+    padding: 4em;
+    outline-offset: -2.6em;
+
+}
+
+  .home-about-textbox h1 {
+    top: .2em;
+    left: 3.6rem;
+    transform: translateX(0);
+  }
+
+.cta-hero {
+  display: none;
+}
+
+.cta-index-desktop {
+  padding-bottom: 3em;
+}
+.cta-index-desktop h1 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: #3EDBF0;
+  display: inline-block;
+  padding: 1em;
+}
+
+/*
+.desktop-button {
+  color: #FFF;
+} */
+
+
+/* about page */
+
+.about-hero {
+  background-size: cover;
+  background-position: center;
+  padding: 35em 0;
+}
+
+.about-page-content h2 {
+  font-size: 2rem;
+}
+.about-page-content p {
+  font-size: 1.2rem;
 }

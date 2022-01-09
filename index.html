@@ -3,16 +3,15 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Coach with Vashti</title>
-
-  <link rel="stylesheet" href="css/newstyles.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://kit.fontawesome.com/af9296157f.js" crossorigin="anonymous"></script>
 
   <!-- Google Fonts -->
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Montserrat&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Nothing+You+Could+Do&family=Raleway:wght@100;400;500;600;700;900&display=swap" rel="stylesheet">
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 
@@ -20,42 +19,112 @@
 
 <body>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <h1 class="main-title">Light Your Heart on Fire</h1>
+  <header>
+    <h1 class="logo">VTW</h1>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" value="">
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="coaching.html">Coaching</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+    <label for="nav-toggle" class="nav-toggle-label">
+      <span></span>
 
-    </div>
+    </label>
+  </header>
 
-  </section>
+  <div class="container">
+    <section class="home-hero">
+      <h1 class="title"><span class="title-line-1">Light </span><span class="title-line-2">Your Heart </span><span class="title-line-3">on Fire</span></h1>
+    </section>
+  </div>
 
-
-  <!-- Begin Mailchimp Signup Form -->
-
-  <section class="hero">
-    <div class="newsletter-signup">
-
-      <div id="mc_embed_signup">
-        <form action="https://gmail.us5.list-manage.com/subscribe/post?u=5b441666cd710919cbcaa86e8&amp;id=d37fc91c90" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div id="mc_embed_signup_scroll">
-            <label for="mce-EMAIL">Join the newsletter</label> <br>
-
-            <div id="signup-line">
-              <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address‍" required>
-              <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5b441666cd710919cbcaa86e8_d37fc91c90" tabindex="-1" value=""></div>
-              <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-            </div>
-          </div>
-        </form>
+  <div class="container">
+    <section class="home-about">
+      <div class="home-about-textbox">
+        <div class="index-text">
+        <h1>Welcome</h1>
+        <p><strong>I'm Vashti. </strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <p><strong>Volutpat est velit</strong> egestas dui id. Augue interdum velit euismod in pellentesque massa placerat.</p>
       </div>
 
-      <!--End mc_embed_signup-->
+      </div>
+    </section>
+  </div>
 
+  <div class="container">
+    <section class="cta-hero">
+      <h1><span class="cta-line-1">Schedule</span><span class="cta-line-2">a free</span><span class="cta-line-3">consult</span></h1>
+      <a href="" class="button button-accent index-button">Contact</a>
+    </section>
+  </div>
 
-
-    </div>
-
+<div class="container">
+  <section class="cta-index-desktop">
+    <h1>Schedule a free consult</h1>
+    <a href="" class="button button-accent button-accent-coach-cta">Contact</a>
   </section>
+</div>
+
+
+  <div class="container">
+
+    <section class="mailchimp">
+
+      <!-- Begin Mailchimp Signup Form -->
+
+      <div class="newsletter-signup">
+
+        <div id="mc_embed_signup">
+          <form action="https://gmail.us5.list-manage.com/subscribe/post?u=5b441666cd710919cbcaa86e8&amp;id=d37fc91c90" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+            <div id="mc_embed_signup_scroll">
+              <label for="mce-EMAIL" class="jtn">Join the newsletter</label> <br>
+
+              <div id="signup-line">
+                <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter your email address‍" required>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_5b441666cd710919cbcaa86e8_d37fc91c90" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button button-accent-mc"></div>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!--End mc_embed_signup-->
+      </div>
+    </section>
+  </div>
+
+
+
+  <footer>
+
+
+    <ul class="unstyled-list">
+      <li class="list-title"><strong>Social</strong></li>
+      <li><i class="fab fa-facebook"></i></li>
+      <li><i class="fab fa-linkedin-in"></i></li>
+      <li><i class="fab fa-twitter"></i></li>
+    </ul>
+
+    <ul class="unstyled-list">
+      <li class="list-title"><strong>Work With Me</strong></li>
+      <li>Coaching</li>
+      <li>Workshops</i></li>
+    </ul>
+
+
+
+    <ul class="unstyled-list">
+      <li class="list-title"><strong>Design Credits</strong></li>
+      <li>Unsplash</li>
+      <li>Vela Design</li>
+    </ul>
+  </footer>
+
 
 </body>
 
